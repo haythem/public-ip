@@ -1,0 +1,14 @@
+name: 'Public IP'
+description: 'Queries the runner''s public IP address'
+author: 'haythem'
+inputs:
+  maxRetries:
+    description: 'How many retries on the ipify apis before failing'
+    default: '5'
+    required: false
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+branding:
+  icon: 'terminal'
+  color: 'red'

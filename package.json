@@ -1,0 +1,46 @@
+{
+  "name": "@haythem/public-ip",
+  "version": "1.0.0",
+  "description": "Queries the runner's public IP address",
+  "private": true,
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "build": "ncc build src/main.ts",
+    "lint": "eslint **/*.ts --cache"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haythem/public-ip.git"
+  },
+  "keywords": [
+    "actions",
+    "ip",
+    "ipv4",
+    "ipv6"
+  ],
+  "author": "Haythem Tlili",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/haythem/public-ip/issues"
+  },
+  "homepage": "https://github.com/haythem/public-ip#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.3",
+    "@actions/http-client": "^1.0.6"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.1.4",
+    "@typescript-eslint/eslint-plugin": "^2.25.0",
+    "@typescript-eslint/parser": "^2.25.0",
+    "@zeit/ncc": "^0.22.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jest": "^23.8.2",
+    "eslint-plugin-simple-import-sort": "^5.0.2",
+    "jest": "^25.2.3",
+    "jest-circus": "^25.2.3",
+    "ts-jest": "^25.2.1",
+    "typescript": "^3.8.3"
+  }
+}
