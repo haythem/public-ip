@@ -26,21 +26,21 @@
   },
   "homepage": "https://github.com/haythem/public-ip#readme",
   "dependencies": {
-    "@actions/core": "^1.2.3",
+    "@actions/core": "^1.2.4",
     "@actions/http-client": "^1.0.8"
   },
   "devDependencies": {
-    "@types/jest": "^25.1.4",
-    "@typescript-eslint/eslint-plugin": "^2.25.0",
-    "@typescript-eslint/parser": "^2.25.0",
-    "@zeit/ncc": "^0.22.0",
-    "eslint": "^6.8.0",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-jest": "^23.8.2",
-    "eslint-plugin-simple-import-sort": "^5.0.2",
-    "jest": "^25.2.3",
-    "jest-circus": "^25.2.3",
-    "ts-jest": "^25.2.1",
-    "typescript": "^3.8.3"
+    "@types/jest": "^26.0.9",
+    "@typescript-eslint/eslint-plugin": "^3.8.0",
+    "@typescript-eslint/parser": "^3.8.0",
+    "@zeit/ncc": "^0.22.3",
+    "eslint": "^7.6.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^23.20.0",
+    "eslint-plugin-simple-import-sort": "^5.0.3",
+    "jest": "^26.2.2",
+    "jest-circus": "^26.2.2",
+    "ts-jest": "^26.1.4",
+    "typescript": "^3.9.7"
   }
 }
