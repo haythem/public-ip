@@ -30,7 +30,6 @@ export async function run(): Promise<void> {
  *
  * @see https://www.ipify.org/
  */
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 interface IPResponse {
   ip: string;
 }
