@@ -9,7 +9,7 @@ import { HttpClient } from '@actions/http-client';
 export async function run(): Promise<void> {
   const maxRetries = parseInt(core.getInput('maxRetries'), 10);
 
-  const http = new HttpClient('haythem/public-ip', undefined, { allowRetries: true, maxRetries: maxRetries });
+  const http = new HttpClient('scotgovcbad/public-ip', undefined, { allowRetries: true, maxRetries: maxRetries });
 
   try {
     const ipv4 = await http.getJson<IPResponse>('https://api.ipify.org?format=json');
