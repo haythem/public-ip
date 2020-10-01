@@ -111,7 +111,7 @@ function run() {
         const http = new http_client_1.HttpClient('haythem/public-ip', undefined, { allowRetries: true, maxRetries: maxRetries });
         try {
             const ipv4 = yield http.getJson('https://api.ipify.org?format=json');
-            const ipv6 = yield http.getJson('https://api6.ipify.org?format=json');
+            const ipv6 = yield http.getJson('https://api64.ipify.org?format=json');
             core.setOutput('ipv4', ipv4.result.ip);
             core.setOutput('ipv6', ipv6.result.ip);
             core.info(`ipv4: ${ipv4.result.ip}`);
