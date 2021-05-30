@@ -13,7 +13,7 @@ describe('Public IP', () => {
     jest.spyOn(core, 'setOutput');
   });
 
-  afterEach(() => jest.resetAllMocks());
+  afterEach(() => jest.restoreAllMocks());
 
   test('Return public ip address', async () => {
     HttpClient.prototype.getJson = jest.fn()
@@ -31,7 +31,7 @@ describe('Public IP', () => {
 
   test('Fail when ipify does not respond', async () => {
     HttpClient.prototype.getJson = jest.fn()
-      .mockRejectedValue({ statusCode: 500 });
+      .mockRejectedValue({ statusCode: 500, result: null });
 
     await run();
 
