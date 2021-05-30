@@ -13,7 +13,7 @@ describe('Public IP', () => {
     jest.spyOn(core, 'setOutput');
   });
 
-  afterEach(() => jest.restoreAllMocks());
+  afterAll(() => jest.resetAllMocks());
 
   test('Return public ip address', async () => {
     HttpClient.prototype.getJson = jest.fn()
