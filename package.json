@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/haythem/public-ip#readme",
   "dependencies": {
-    "@actions/core": "^1.3.0",
+    "@actions/core": "^1.9.1",
     "@actions/http-client": "^1.0.11"
   },
   "devDependencies": {
