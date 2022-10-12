@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: '12.x'
+          node-version: "16.16.0"
 
       - name: Restore Cache
         uses: actions/cache@v1
