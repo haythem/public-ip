@@ -10,7 +10,7 @@ export async function run(): Promise<void> {
   const maxRetries = parseInt(core.getInput("maxRetries"), 10);
   const http = new HttpClient("haythem/public-ip", undefined, {
     allowRetries: true,
-    maxRetries: maxRetries,
+    maxRetries: maxRetries
   });
 
   try {

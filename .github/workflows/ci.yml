@@ -18,6 +18,10 @@ jobs:
         with:
           node-version: "16.16.0"
 
+      - name: Public IP
+        id: ip
+        uses: haythem/public-ip@v1.2
+
       - name: Restore Cache
         uses: actions/cache@v1
         with:
@@ -34,6 +38,11 @@ jobs:
 
       - name: Run Tests
         run: yarn test
+
+      - name: Integration
+        run: |
+          echo ${{ steps.ip.outputs.ipv4 }}
+          echo ${{ steps.ip.outputs.ipv6 }}
 
       - name: Code Coverage
         uses: codecov/codecov-action@v1

@@ -35,7 +35,7 @@ jobs:
     steps:
     - name: Public IP
       id: ip
-      uses: haythem/public-ip@v1.2
+      uses: haythem/public-ip@v1
 
     - name: Print Public IP
       run: |

@@ -2739,7 +2739,7 @@ function run() {
         const maxRetries = parseInt(core.getInput("maxRetries"), 10);
         const http = new http_client_1.HttpClient("haythem/public-ip", undefined, {
             allowRetries: true,
-            maxRetries: maxRetries,
+            maxRetries: maxRetries
         });
         try {
             const ipv4 = yield http.getJson("https://api.ipify.org?format=json");
