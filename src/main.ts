@@ -13,8 +13,8 @@ export async function run(): Promise<void> {
     maxRetries: maxRetries
   });
 
-  var numTries = 0;
-  var success = false;
+  let numTries = 0;
+  let success = false;
   while (!success && numTries < maxRetries) {
     console.log(success);
     try {
