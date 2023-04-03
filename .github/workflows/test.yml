@@ -1,0 +1,17 @@
+name: Public IP
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Public IP
+      id: ip
+      uses: rodrigoegimenez/public-ip@feat/retry-on-error
+
+    - name: Print Public IP
+      run: |
+        echo ${{ steps.ip.outputs.ipv4 }}
+        echo ${{ steps.ip.outputs.ipv6 }}
