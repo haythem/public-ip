@@ -16,8 +16,8 @@ export async function run(): Promise<void> {
   let numTries = 0;
   let success = false;
   while (!success && numTries < maxRetries) {
-    console.log(success);
     try {
+      core.info(`Attempt: ${numTries + 1} of ${maxRetries}`);
       const ipv4 = await http.getJson<IPResponse>(
         "https://api.ipify.org?format=json"
       );
@@ -31,12 +31,12 @@ export async function run(): Promise<void> {
       core.info(`ipv4: ${ipv4.result.ip}`);
       core.info(`ipv6: ${ipv6.result.ip}`);
       success = true;
-      console.log("success");
     } catch (error) {
+      core.debug(`Error: ${error?.message}.`);
       if (numTries == maxRetries - 1) {
         core.setFailed(error?.message);
       }
-    } 
+    }
     numTries++;
   }
 }
