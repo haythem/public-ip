@@ -20,7 +20,7 @@ jobs:
 
       - name: Public IP
         id: ip
-        uses: haythem/public-ip@v1.3
+        uses: "./"
 
       - name: Restore Cache
         uses: actions/cache@v1
