@@ -29,7 +29,7 @@ describe("Public IP", () => {
     expect(core.setOutput).toHaveBeenCalledWith("ipv6", "1.2.3.4");
   });
 
-  test("Fail when ipify does not respond", async () => {
+  test("Fail after maxRetries when ipify does not respond", async () => {
     HttpClient.prototype.getJson = jest
       .fn()
       .mockRejectedValue({ statusCode: 500, result: null });
@@ -38,5 +38,16 @@ describe("Public IP", () => {
 
     expect(HttpClient.prototype.getJson).toHaveBeenCalled();
     expect(core.setFailed).toHaveBeenCalled();
+  });
+
+  test("Retry on error", async () => {
+    HttpClient.prototype.getJson = jest
+      .fn()
+      .mockRejectedValueOnce({ statusCode: 500, result: null })
+      .mockResolvedValue({ statusCode: 200, result: { ip: "1.2.3.4" } });
+    await expect(run()).resolves.toBe(undefined);
+
+    expect(HttpClient.prototype.getJson).toBeCalledTimes(3);
+    expect(core.setFailed).toHaveBeenCalledTimes(0);
   });
 });

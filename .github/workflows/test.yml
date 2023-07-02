@@ -1,0 +1,20 @@
+name: Public IP
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Public IP
+        id: ip
+        uses: "./"
+
+      - name: Print Public IP
+        run: |
+          echo ${{ steps.ip.outputs.ipv4 }}
+          echo ${{ steps.ip.outputs.ipv6 }}
+
