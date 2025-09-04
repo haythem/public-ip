@@ -20,7 +20,7 @@ jobs:
 
       - name: Public IP
         id: ip
-        uses: haythem/public-ip@v1.3
+        uses: haythem/public-ip@v2.0
 
       - name: Restore Cache
         uses: actions/cache@v1
@@ -42,6 +42,7 @@ jobs:
       - name: Integration
         run: |
           echo ${{ steps.ip.outputs.ipv4 }}
+          echo ${{ steps.ip.outputs.ipv64 }}
           echo ${{ steps.ip.outputs.ipv6 }}
 
       - name: Code Coverage
