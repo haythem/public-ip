@@ -18,7 +18,8 @@ This action allows you to whitelist the runner's address and remove it once the 
 ### Outputs
 
 * `ipv4` - Public IPv4 of the runner
-* `ipv6` - Public IPv6 of the runner. If not available the `ipv4` will be returned
+* `ipv64` - Public IPv6 of the runner. If not available the `ipv4` will be returned
+* `ipv6` - Public IPv6 of the runner
 
 
 ### Example workflow
@@ -35,11 +36,12 @@ jobs:
     steps:
     - name: Public IP
       id: ip
-      uses: haythem/public-ip@v1.3
+      uses: haythem/public-ip@v2.0
 
     - name: Print Public IP
       run: |
         echo ${{ steps.ip.outputs.ipv4 }}
+        echo ${{ steps.ip.outputs.ipv64 }}
         echo ${{ steps.ip.outputs.ipv6 }}
 ```
 

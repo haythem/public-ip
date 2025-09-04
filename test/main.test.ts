@@ -24,8 +24,9 @@ describe("Public IP", () => {
     expect(HttpClient.prototype.getJson).toHaveBeenCalled();
     expect(core.getInput).toHaveBeenCalledWith("maxRetries");
     expect(core.getInput).toHaveReturnedWith("6");
-    expect(core.setOutput).toHaveBeenCalledTimes(2);
+    expect(core.setOutput).toHaveBeenCalledTimes(3);
     expect(core.setOutput).toHaveBeenCalledWith("ipv4", "1.2.3.4");
+    expect(core.setOutput).toHaveBeenCalledWith("ipv64", "1.2.3.4");
     expect(core.setOutput).toHaveBeenCalledWith("ipv6", "1.2.3.4");
   });
 
